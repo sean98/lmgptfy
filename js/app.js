@@ -200,7 +200,7 @@
     const text = buildShareMessage(linkOutput.value);
     if (navigator.share) {
       try {
-        await navigator.share({ title: 'Let me ask that for you', text, url: linkOutput.value });
+        await navigator.share({ title: 'Let me GPT that for you', text, url: linkOutput.value });
         return;
       } catch (e) {
         // Fall back to copy when the share sheet is cancelled or unavailable.
