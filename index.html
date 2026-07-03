@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Let Me Ask That For You</title>
+  <meta name="description" content="For questions that deserved a search bar. Pick a model, type the question, and send the link." />
+  <meta property="og:title" content="Let me ask that for you" />
+  <meta property="og:description" content="For questions that deserved a search bar." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script>
+    (function () {
+      try {
+        var dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <h1 class="hero-title">Let me ask that for you</h1>
+      <p>For questions that deserved a search bar.</p>
+    </div>
+
+    <div class="card">
+      <div class="section-label">1. Choose a model</div>
+      <div class="provider-grid" id="providerGrid"></div>
+
+      <div class="section-label">2. Type the question</div>
+      <textarea id="question" dir="auto" maxlength="600" placeholder="e.g. What's the best way to learn a new language as an adult?"></textarea>
+      <div class="row-between">
+        <span id="charCount">0 / 600</span>
+      </div>
+
+      <div class="section-label">3. Pick the roast level</div>
+      <div class="roast-grid" id="roastGrid"></div>
+      <input type="text" id="customRoast" class="custom-roast" dir="auto" maxlength="140"
+             placeholder="Write your own message — shown while it plays" />
+
+      <button class="primary-btn" id="generateBtn">Make the link</button>
+
+      <div class="result" id="result">
+        <div class="section-label">Your link</div>
+        <div class="link-row">
+          <input type="text" id="linkOutput" readonly />
+          <button class="icon-btn" id="copyBtn">Copy</button>
+        </div>
+        <div class="result-actions">
+          <button class="ghost-btn" id="shareBtn">Share</button>
+          <a href="#" class="ghost-btn" id="previewBtn" target="_blank" rel="noopener">▶ Preview animation</a>
+        </div>
+        <p class="note" id="prefillNote"></p>
+      </div>
+    </div>
+
+    <div class="history" id="historySection">
+      <div class="section-label">Recently created</div>
+      <div id="historyList"></div>
+    </div>
+
+    <footer class="site-footer">
+      <a class="kofi-btn" href="https://ko-fi.com/sean98" target="_blank" rel="noopener">Buy me more tokens 🪙</a>
+      <div>Not affiliated with OpenAI or Anthropic.</div>
+    </footer>
+  </div>
+
+  <script src="js/lz-string.min.js"></script>
+  <script src="js/providers.js"></script>
+  <script src="js/roasts.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
