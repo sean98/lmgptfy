@@ -160,7 +160,6 @@
       typeQuestion(typedTextEl, question, () => {
         schedule(POST_TYPE_PAUSE, () => {
           sendBtn.classList.add('active');
-          attemptClipboardCopy(question);
           schedule(SEND_PULSE + STATUS_PAUSE, () => goToDestination());
         });
       });
@@ -182,7 +181,6 @@
     }
 
     skipBtn.addEventListener('click', () => {
-      attemptClipboardCopy(question);
       goToDestination();
     });
 
@@ -234,13 +232,5 @@
     if (char === ' ') return keystroke + 30 + Math.random() * 90; // word boundary
     if (Math.random() < 0.06) return keystroke + 150 + Math.random() * 280; // mid-word hesitation
     return keystroke;
-  }
-
-  async function attemptClipboardCopy(text) {
-    try {
-      await navigator.clipboard.writeText(text);
-    } catch (e) {
-      /* clipboard may be blocked outside a secure/user-gesture context; safe to ignore */
-    }
   }
 })();
