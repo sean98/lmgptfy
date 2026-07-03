@@ -1,4 +1,4 @@
-# Let Me Ask That For You
+# Let Me GPT That For You
 
 Pick **ChatGPT** or **Claude**, type a question, choose a roast level, and get a shareable
 link. Whoever opens the link watches a themed, animated mockup of that AI's chat screen with
