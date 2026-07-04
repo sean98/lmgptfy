@@ -87,8 +87,8 @@
     return url.toString();
   }
 
-  function buildShareMessage(link) {
-    return `Could have searched this, but here: ${link}`;
+  function buildShareMessage() {
+    return `Could have searched this, but here: `;
   }
 
   function getHistory() {
@@ -197,7 +197,7 @@
   copyBtn.addEventListener('click', () => copyToClipboard(linkOutput.value, copyBtn, 'Copy'));
 
   shareBtn.addEventListener('click', async () => {
-    const text = buildShareMessage(linkOutput.value);
+    const text = buildShareMessage();
     if (navigator.share) {
       try {
         await navigator.share({ title: 'Let me GPT that for you', text, url: linkOutput.value });
